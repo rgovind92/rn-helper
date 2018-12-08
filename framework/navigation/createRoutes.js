@@ -19,7 +19,11 @@ export default ({ routes }) => {
     initialRouteName: config.navigation.landingPage,
     transitionConfig: slideFromRightTransition,
     navigationOptions: () => ({
-      header: Header ? Header : props => <DefaultHeader {...props} />,
+      header: config.navigation.header
+        ? 
+        Header ? Header : props => <DefaultHeader {...props} />
+        :
+        null,
       headerTitleStyle: {
         textAlign: 'center',
         flex: 1

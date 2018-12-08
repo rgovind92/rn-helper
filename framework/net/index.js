@@ -21,7 +21,7 @@ const processResponse = (response, endpoint) => {
     return Promise.reject(response);
   } 
 
-  return response.data.results;
+  return response.data;
 };
 
 const handleNetworkError = (response, endpoint) => { 
@@ -64,7 +64,7 @@ export default ({ endpoint, body, timeout = 10000 }) => {
   store.dispatch(requestStart(__endpoint__));
 
   if (config.exclude && config.exclude.includes('sampleresponses')) {
-    return axios.post(normalizeURL(config.iCargoURL) + endpoint,
+    return axios.post(normalizeURL(config.URL) + endpoint,
       body, {
         headers,
         timeout,

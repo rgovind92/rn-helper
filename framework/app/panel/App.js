@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 
 import ISnackBar from '../../component/ISnackBar';
 import IDialog from '../../component/IDialog';
+import FlashMessage from 'react-native-flash-message';
 import { setTopLevelNavigator } from '../../navigation';
 
 export default class extends Component {
@@ -25,6 +26,7 @@ export default class extends Component {
           text='Press back once more to Log out / Exit'
         />
         <IDialog />
+        <FlashMessage position="top" />
       </View>
     );
   }

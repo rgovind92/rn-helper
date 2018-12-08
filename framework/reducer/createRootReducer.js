@@ -9,7 +9,7 @@ import auth from './authReducer';
 import { __store__ as store } from '../store';
 import config from '../config';
 
-export const createRootReducer = reducers => {  
+export const createRootReducer = reducers => {
   let reducersWithIgnore = reducers;
 
   if (config.exclude.indexOf('reduxIgnore') === -1) {
@@ -41,7 +41,7 @@ export const createRootReducer = reducers => {
     ...reducersWithIgnore,
     auth,
     common,
-    form,
+    //form,
     // React navigation discourages storing navigation state in redux:
     // https://github.com/react-navigation/react-navigation/issues/4490
     // However, 
